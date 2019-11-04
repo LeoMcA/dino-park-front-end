@@ -43,6 +43,7 @@
           description,
           uris,
           identities,
+          accessInformation,
           userOnOwnProfile,
           editable: !viewAs,
         }"

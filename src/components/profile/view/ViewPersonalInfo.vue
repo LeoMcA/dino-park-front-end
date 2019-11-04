@@ -13,6 +13,10 @@
           :isStaff="staffInformation.staff.value"
         ></UserPicture>
       </div>
+      <ProfileNDA
+        v-if="!staffInformation.staff.value"
+        v-bind="{ accessInformation }"
+      ></ProfileNDA>
       <div class="hide-mobile profile__contact-me-container">
         <ContactMe
           :identities="identities"
@@ -103,6 +107,7 @@ import MetaList from '@/components/ui/MetaList.vue';
 import ShowMore from '@/components/_functional/ShowMore.vue';
 import UserPicture from '@/components/ui/UserPicture.vue';
 import ProfileDescription from '../ProfileDescription.vue';
+import ProfileNDA from '../ProfileNDA.vue';
 import ProfileName from '../ProfileName.vue';
 import ProfileTitle from '../ProfileTitle.vue';
 import ProfileTeamLocation from '../ProfileTeamLocation.vue';
@@ -128,6 +133,7 @@ export default {
     description: Object,
     uris: Object,
     identities: Object,
+    accessInformation: Object,
     userOnOwnProfile: Boolean,
     editable: Boolean,
   },
@@ -138,6 +144,7 @@ export default {
     Meta,
     MetaList,
     ProfileDescription,
+    ProfileNDA,
     ProfileName,
     ProfileTeamLocation,
     ProfileTitle,
